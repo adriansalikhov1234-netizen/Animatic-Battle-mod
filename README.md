@@ -1,0 +1,33 @@
+# Totem Impact — клиентский мод для Minecraft 26.3 (Fabric)
+
+Когда у вас срабатывает тотем бессмертия, вместо ванильной анимации:
+1. весь экран становится белым (импакт-кадр);
+2. по центру появляется ваша картинка — очень маленькая, и каждые 0,5 с становится больше, пока не станет на весь экран;
+3. играет ваша музыка; сцена длится ровно столько, сколько музыка (2,42 с).
+
+Мод только клиентский: на сервер ставить ничего не нужно.
+
+## Как собрать
+Нужно: JDK 25 и Gradle 9.3+ (или сгенерируйте шаблон на https://fabricmc.net/develop/template/ для 26.3 и скопируйте в него папку `src` и `gradle.properties` из этого проекта — тогда wrapper уже будет).
+
+    cd totem-impact-mod
+    gradle build
+
+Готовый мод: `build/libs/totem-impact-1.0.0.jar` (не `-sources`).
+
+## Как установить
+Fabric Loader 0.19.5+ и Fabric API для 26.3 + этот jar → в папку `mods`.
+
+## Замена картинки/музыки
+- картинка: `src/main/resources/assets/totemimpact/textures/gui/impact.png` (если размер другой — поправьте TEX_W/TEX_H в ImpactScene.java)
+- музыка: `.../sounds/impact.ogg` (если длина другая — поправьте DURATION_MS; сейчас 2208 мс)
+- скорость роста и размеры шагов: STEP_MS и SCALES в ImpactScene.java
+
+## Собрать .jar без установки Java и Gradle (GitHub)
+1. Создайте репозиторий на github.com и загрузите в него все файлы проекта (включая папку `.github`).
+2. Вкладка **Actions** → workflow **build** → дождитесь зелёной галочки (запускается сам после загрузки, либо кнопка Run workflow).
+3. Откройте завершённый запуск → внизу **Artifacts** → скачайте `totem-impact-jar` (внутри zip лежит готовый .jar).
+
+## Тотем
+- `assets/minecraft/textures/item/totem_of_undying.png` — голубой тотем (заменяет ванильную текстуру, в инвентаре тоже голубой)
+- `assets/totemimpact/textures/gui/totem_blue.png` и `glow.png` — тотем и свечение, которые остаются «в руке» во время сцены

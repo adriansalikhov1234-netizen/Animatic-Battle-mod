@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "totemimpact",
+  "version": "${version}",
+  "name": "Totem Impact",
+  "description": "Заменяет анимацию тотема бессмертия на импакт-кадр: белый экран, растущая картинка и музыка. Только клиент.",
+  "authors": ["you"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.totemimpact.TotemImpactClient"]
+  },
+  "mixins": [
+    { "config": "totemimpact.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
