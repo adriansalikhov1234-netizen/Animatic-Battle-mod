@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "package": "com.example.totemimpact.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "DeathScreenMixin",
+    "AbstractWidgetMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
