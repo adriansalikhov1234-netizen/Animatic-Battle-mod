@@ -3,5 +3,10 @@
     "sounds": [
       "totemimpact:impact"
     ]
+  },
+  "death": {
+    "sounds": [
+      { "name": "totemimpact:death", "stream": true }
+    ]
   }
 }
